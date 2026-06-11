@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenders Global | International Medical & Pharmaceutical Trade</title>
-    
-    <script>
-        if (window.location.hostname.startsWith('www.')) {
-            window.location.replace(window.location.href.replace('www.', ''));
-        }
-    </script>
-
     <style>
         /* Genel Stil Ayarları */
         * {
@@ -191,7 +184,7 @@
             border-radius: 8px;
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
             z-index: 9999;
-            display: none; /* JS ile açılacak */
+            display: none;
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -203,9 +196,10 @@
             line-height: 1.4;
         }
 
-        .cookie-banner p a {
+        .cookie-banner p span {
             color: #38bdf8;
             text-decoration: underline;
+            cursor: pointer;
         }
 
         .cookie-btn {
@@ -267,14 +261,11 @@
             padding-bottom: 10px;
         }
 
-        .modal p, .modal ul {
+        .modal p {
             font-size: 14px;
             color: #475569;
             margin-bottom: 15px;
-        }
-
-        .modal ul {
-            padding-left: 20px;
+            text-align: left;
         }
 
         /* Alt Bilgi (Footer) */
@@ -291,15 +282,16 @@
             margin-bottom: 25px;
         }
 
-        .footer-links a {
+        .footer-links span {
             color: #94a3b8;
             text-decoration: none;
             margin: 0 15px;
             transition: color 0.2s;
             font-weight: 500;
+            cursor: pointer;
         }
 
-        .footer-links a:hover {
+        .footer-links span:hover {
             color: #38bdf8;
         }
 
@@ -395,7 +387,7 @@
     </section>
 
     <div id="cookieBanner" class="cookie-banner">
-        <p>We use essential cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our <a onclick="openModal('privacyModal')">Privacy & Cookie Policy</a>.</p>
+        <p>We use essential cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our <span onclick="openModal('privacyModal')">Privacy & Cookie Policy</span>.</p>
         <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
     </div>
 
@@ -422,26 +414,24 @@
 
     <footer>
         <div class="footer-links">
-            <a onclick="openModal('privacyModal')">Privacy & Cookie Policy</a> | 
-            <a onclick="openModal('legalModal')">Legal Disclaimer</a>
+            <span onclick="openModal('privacyModal')">Privacy & Cookie Policy</span> | 
+            <span onclick="openModal('legalModal')">Legal Disclaimer</span>
         </div>
         <p>&copy; 2026 Tenders Global. All rights reserved. | International Trading Solutions</p>
     </footer>
 
     <script>
-        // Çerez çubuğunu kontrol etme
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", function() {
             if (!localStorage.getItem('cookiesAccepted')) {
                 document.getElementById('cookieBanner').style.display = 'flex';
             }
-        };
+        });
 
         function acceptCookies() {
             localStorage.setItem('cookiesAccepted', 'true');
             document.getElementById('cookieBanner').style.display = 'none';
         }
 
-        // Modal Açma/Kapama
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
         }
@@ -450,7 +440,6 @@
             document.getElementById(modalId).style.display = 'none';
         }
 
-        // Modal dışına tıklayınca kapatma
         window.onclick = function(event) {
             if (event.target.className === 'modal') {
                 event.target.style.display = 'none';
