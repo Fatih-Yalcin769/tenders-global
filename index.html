@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenders Global | International Medical & Pharmaceutical Trade</title>
+    
+    <script>
+        if (window.location.hostname.startsWith('www.')) {
+            window.location.replace(window.location.href.replace('www.', ''));
+        }
+    </script>
+
     <style>
         /* Genel Stil Ayarları */
         * {
@@ -11,6 +18,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -55,6 +63,7 @@
             color: #475569;
             font-weight: 500;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -169,17 +178,132 @@
             margin-bottom: 5px;
         }
 
+        /* Çerez Uyarı Çubuğu (Cookie Banner) */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            max-width: 500px;
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: none; /* JS ile açılacak */
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #334155;
+        }
+
+        .cookie-banner p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .cookie-banner p a {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+
+        .cookie-btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .cookie-btn:hover {
+            background-color: #0369a1;
+        }
+
+        /* Modallar (Yasal Metin Pencereleri) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .modal p, .modal ul {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .modal ul {
+            padding-left: 20px;
+        }
+
         /* Alt Bilgi (Footer) */
         footer {
             background-color: #0f172a;
             color: #94a3b8;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
             border-top: 1px solid #1e293b;
         }
 
-        /* Mobil Uumluluk */
+        .footer-links {
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Mobil Uyum */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -193,12 +317,18 @@
             .hero h1 {
                 font-size: 32px;
             }
+            .cookie-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cookie-btn {
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Üst Menü -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Tenders<span>Global</span></a>
@@ -210,13 +340,11 @@
         </div>
     </header>
 
-    <!-- Giriş Alanı -->
     <section class="hero">
         <h1>Global Solutions in Medical & Pharmaceutical Trade</h1>
-        <p>Connecting healthcare demands with reliable international supply chains. We facilitate efficient cross-border trade for essential medical medical equipment and pharmaceuticals.</p>
+        <p>Connecting healthcare demands with reliable international supply chains. We facilitate efficient cross-border trade for essential medical equipment and pharmaceuticals.</p>
     </section>
 
-    <!-- Hakkımızda Bölümü -->
     <section id="about" class="section">
         <h2 class="section-title">About Us</h2>
         <div class="about-text">
@@ -224,26 +352,22 @@
         </div>
     </section>
 
-    <!-- Faaliyet Alanları Bölümü -->
     <section id="operations" class="section" style="background-color: #f1f5f9;">
         <h2 class="section-title">Our Operations</h2>
         <div class="services-grid">
             
-            <!-- 1. Kart: Medikal Malzeme -->
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Medical Supplies & Equipment</h3>
                 <p>We source and distribute a wide range of general medical consumables, hospital supplies, and healthcare equipment to meet global institutional demands.</p>
             </div>
 
-            <!-- 2. Kart: İlaç Ticareti -->
             <div class="service-card">
                 <div class="service-icon">💊</div>
                 <h3>Pharmaceutical Procurement</h3>
                 <p>We facilitate the international supply of essential pharmaceuticals, medicines, and healthcare formulations, ensuring efficient cross-border logistics.</p>
             </div>
 
-            <!-- 3. Kart: Global Ticaret -->
             <div class="service-card">
                 <div class="service-icon">🌍</div>
                 <h3>International Trade & Logistics</h3>
@@ -253,7 +377,6 @@
         </div>
     </section>
 
-    <!-- İletişim Bölümü -->
     <section id="contact" class="section">
         <h2 class="section-title">Contact Us</h2>
         <div class="contact-info">
@@ -271,10 +394,69 @@
         </div>
     </section>
 
-    <!-- Alt Bilgi -->
+    <div id="cookieBanner" class="cookie-banner">
+        <p>We use essential cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our <a onclick="openModal('privacyModal')">Privacy & Cookie Policy</a>.</p>
+        <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h3>Privacy & Cookie Policy</h3>
+            <p><strong>Effective Date:</strong> June 2026</p>
+            <p>At Tenders Global, we value your privacy. This website is a general informational platform. We do not collect, track, or store personal user data or behavioral tracking history.</p>
+            <p><strong>Essential Cookies:</strong> We only use technical, strictly necessary cookies to ensure the website functions correctly, stays secure, and remembers if you have dismissed the cookie information banner.</p>
+            <p>No third-party marketing or profiling cookies are deployed on this website.</p>
+        </div>
+    </div>
+
+    <div id="legalModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('legalModal')">&times;</span>
+            <h3>Legal Disclaimer</h3>
+            <p><strong>General Information Only:</strong> All content, descriptions, and data provided on tenders-global.com are for general informational and corporate awareness purposes only. The information does not constitute medical advice, a formal commercial offer, or contract binding solutions.</p>
+            <p><strong>No Certification Warranties:</strong> Tenders Global acts as an international trading facilitator. While we cooperate with standardized global production channels, specific product certifications, compliance regulations, and localized import licenses are verified directly within individual formal business tender contracts rather than on this public gateway.</p>
+            <p><strong>Limitation of Liability:</strong> Tenders Global is not responsible for any actions taken based on the general public content of this website.</p>
+        </div>
+    </div>
+
     <footer>
+        <div class="footer-links">
+            <a onclick="openModal('privacyModal')">Privacy & Cookie Policy</a> | 
+            <a onclick="openModal('legalModal')">Legal Disclaimer</a>
+        </div>
         <p>&copy; 2026 Tenders Global. All rights reserved. | International Trading Solutions</p>
     </footer>
+
+    <script>
+        // Çerez çubuğunu kontrol etme
+        window.onload = function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookieBanner').style.display = 'flex';
+            }
+        };
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Modal Açma/Kapama
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Modal dışına tıklayınca kapatma
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
