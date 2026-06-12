@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Tenders | International Medical & Pharmaceutical Trade</title>
+    <title>Tenders Global | International Medical & Pharmaceutical Trade</title>
     <style>
         /* Kurumsal Stil Ayarları */
         * {
@@ -37,20 +37,38 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px; /* Logo boyutu için padding hafifçe daraltıldı */
+            padding: 15px 20px;
         }
 
-        /* Güncellenmiş Kurumsal Logo Düzeni */
+        /* Verilen O-G Logosunun Kodla Çizilmiş Hali (Küçük Sürüm) */
         .logo-wrapper {
             display: flex;
             align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo-img {
-            height: 45px; /* Üst menü için ideal yükseklik */
-            width: auto;
-            object-fit: contain;
+        .custom-logo-svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: #0284c7;
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            margin-top: 4px;
+            font-weight: 800;
         }
 
         nav a {
@@ -74,21 +92,17 @@
             text-align: center;
         }
 
-        /* Ana Sayfadaki Büyük Logo Alanı */
+        /* Resimdeki Dünya Yerine Gelen Büyük O-G Logosu */
         .hero-logo-space {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             display: flex;
             justify-content: center;
         }
 
-        .hero-logo-img {
-            max-width: 450px; /* Büyük logo alanı için genişlik sınırı */
-            width: 100%;
-            height: auto;
-            background: rgba(255, 255, 255, 0.95); /* Logonun koyu arka planda net görünmesi için beyaz zemin */
-            padding: 20px 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        .big-logo-svg {
+            width: 160px;
+            height: 160px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
         }
 
         .hero h1 {
@@ -108,6 +122,343 @@
             color: #cbd5e1;
             font-weight: 400;
         }
+
+        /* Güvenlik Şeridi (Sicherheit / Security Bar) */
+        .security-bar {
+            background-color: #0284c7;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* İçerik Alanları */
+        .section {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            color: #0f172a;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #0284c7;
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .about-text p {
+            font-size: 16.5px;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        /* Operasyon Kartları */
+        .bg-slate {
+            background-color: #f1f5f9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 12px;
+            color: #0f172a;
+            font-size: 19px;
+        }
+
+        .card-content p {
+            color: #64748b;
+            font-size: 14.5px;
+        }
+
+        /* İletişim */
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .contact-item h4 {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .contact-item p {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0284c7;
+        }
+
+        /* --- AVRUPA UYUMLU GELİŞMİŞ ÇEREZ PANELİ --- */
+        .cookie-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cookie-modal {
+            background: white;
+            max-width: 560px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .cookie-modal h3 {
+            font-size: 20px;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cookie-modal p {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .cookie-option {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cookie-opt-info h4 {
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+
+        .cookie-opt-info p {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        .status-badge {
+            font-size: 11px;
+            background: #cbd5e1;
+            color: #475569;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .status-badge.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .cookie-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .c-btn {
+            padding: 11px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: background 0.2s;
+        }
+
+        .c-btn-accept { background: #0284c7; color: white; }
+        .c-btn-accept:hover { background: #0369a1; }
+        .c-btn-deny { background: white; border-color: #cbd5e1; color: #475569; }
+        .c-btn-deny:hover { background: #f8fafc; }
+        .c-btn-save { background: #0f172a; color: white; }
+        .c-btn-save:hover { background: #1e293b; }
+
+        /* Sabit "Privacy Settings" Butonu (Sol Alt) */
+        .privacy-trigger-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            color: #0284c7;
+            border: 1px solid #cbd5e1;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 9999;
+            transition: all 0.2s;
+        }
+
+        .privacy-trigger-btn:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            border-color: #0284c7;
+        }
+
+        /* Modallar */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 9999999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 26px;
+            cursor: pointer;
+            color: #94a3b8;
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #0f172a;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .modal p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links span {
+            color: #94a3b8;
+            margin: 0 12px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .footer-links span:hover {
+            color: #0284c7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 12px; }
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero h1 { font-size: 32px; }
+            .cookie-actions { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -115,23 +466,174 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo-wrapper">
-                <img src="image_87f3fa.png" alt="Global Tenders Danışmanlık" class="logo-img">
+                <svg class="custom-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="50" r="28" stroke="#1e3a8a" stroke-width="7" fill="none" />
+                    <circle cx="40" cy="50" r="16" stroke="#1e3a8a" stroke-width="4" fill="none" />
+                    <circle cx="60" cy="50" r="28" stroke="#0284c7" stroke-width="7" fill="none" stroke-dasharray="140 40" stroke-dashoffset="10" />
+                    <circle cx="60" cy="50" r="16" stroke="#0284c7" stroke-width="4" fill="none" stroke-dasharray="80 25" stroke-dashoffset="5" />
+                    <path d="M 60 50 L 76 50" stroke="#0284c7" stroke-width="6" stroke-linecap="round" />
+                </svg>
+                <div class="logo-text">Tenders<span>GLOBAL</span></div>
             </a>
             <nav>
-                <a href="#about">Kurumsal</a>
-                <a href="#services">Hizmetlerimiz</a>
-                <a href="#contact">İletişim</a>
+                <a href="#about">About Us</a>
+                <a href="#operations">Operations</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-logo-space">
-            <img src="image_87f3fa.png" alt="Global Tenders Danışmanlık" class="hero-logo-img">
+            <svg class="big-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="38" cy="50" r="28" stroke="#ffffff" stroke-width="6.5" fill="none" opacity="0.8" />
+                <circle cx="38" cy="50" r="16" stroke="#ffffff" stroke-width="3.5" fill="none" opacity="0.6" />
+                <circle cx="62" cy="50" r="28" stroke="#38bdf8" stroke-width="6.5" fill="none" stroke-dasharray="140 40" stroke-dashoffset="10" />
+                <circle cx="62" cy="50" r="16" stroke="#38bdf8" stroke-width="3.5" fill="none" stroke-dasharray="80 25" stroke-dashoffset="5" />
+                <path d="M 62 50 L 78 50" stroke="#38bdf8" stroke-width="5.5" stroke-linecap="round" />
+            </svg>
         </div>
-        <h1>Uluslararası Sağlık ve Medikal İhalelerde Güvenilir Çözüm Ortağınız</h1>
-        <p>Global Tenders Danışmanlık ile dünya çapındaki medikal ve farmasötik ticaret fırsatlarına zahmetsizce ulaşın, işinizi küresele taşıyın.</p>
+        <h1>Global Solutions in Medical & Pharmaceutical Trade</h1>
+        <p>Connecting healthcare demands with reliable international supply chains. We facilitate efficient cross-border trade for essential medical equipment and pharmaceuticals.</p>
     </section>
 
+    <div class="security-bar">
+        🔒 SECURE LOGISTICS & DATA ENCRYPTION STANDARDS ENFORCED
+    </div>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-grid">
+            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Global Operations" class="about-img">
+            <div class="about-text">
+                <p>Tenders Global is an international trading company specializing in the supply and distribution of medical supplies and pharmaceutical products.</p>
+                <p>With a strong commitment to global health, we act as a trusted bridge between reputable healthcare manufacturers and markets worldwide. Our general focus is to ensure the smooth, sustainable, and timely delivery of critical healthcare products wherever they are needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="operations" class="section bg-slate">
+        <h2 class="section-title">Our Operations</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80" alt="Medical" class="card-img">
+                <div class="card-content">
+                    <h3>Medical Supplies & Equipment</h3>
+                    <p>We source and distribute a wide range of general medical consumables, hospital supplies, and healthcare equipment to meet global institutional demands.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=400&q=80" alt="Pharma" class="card-img">
+                <div class="card-content">
+                    <h3>Pharmaceutical Procurement</h3>
+                    <p>We facilitate the international supply of essential pharmaceuticals, medicines, and healthcare formulations, ensuring efficient cross-border logistics.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&q=80" alt="Logistics" class="card-img">
+                <div class="card-content">
+                    <h3>International Logistics</h3>
+                    <p>With our expertise in global supply chains, we manage complex international procurement processes and supply network management for our partners.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                <h4>Official Corporate Email</h4>
+                <p>info@tenders-global.com</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="privacy-trigger-btn" onclick="showCookiePanel()">
+        🛡️ Privacy Settings
+    </button>
+
+    <div id="cookieOverlay" class="cookie-overlay">
+        <div class="cookie-modal">
+            <h3>🔒 Privacy & Security Settings</h3>
+            <p>We use strict European data protection protocols (Datenschutz) to ensure maximum safety on our platform. You can configure your security preferences below in full transparency.</p>
+            
+            <div class="cookie-option">
+                <div class="cookie-opt-info">
+                    <h4>Essential Technical Security</h4>
+                    <p>Enforces SSL/TLS data encryption and safe communication logs.</p>
+                </div>
+                <span class="status-badge active">Always Active</span>
+            </div>
+
+            <div class="cookie-option">
+                <div class="cookie-opt-info">
+                    <h4>Anonymized Connection Optimization</h4>
+                    <p>Monitors interface load speeds without harvesting private data.</p>
+                </div>
+                <span class="status-badge">Anonymized</span>
+            </div>
+
+            <div class="cookie-actions">
+                <button class="c-btn c-btn-deny" onclick="closeCookiePanel()">Deny All</button>
+                <button class="c-btn c-btn-save" onclick="closeCookiePanel()">Save & Exit</button>
+                <button class="c-btn c-btn-accept" onclick="closeCookiePanel()">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h3>Privacy & Cookie Policy</h3>
+            <p><strong>Data Encryption & Security:</strong> We deploy end-to-end SSL/TLS architecture to prevent unauthorized access. We do not collect, harvest, or commercialize tracking cookies or user search histories.</p>
+            <p><strong>Essential Technical Cookies:</strong> Strictly limited to session management and security logs to verify safe data communication.</p>
+        </div>
+    </div>
+
+    <div id="legalModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('legalModal')">&times;</span>
+            <h3>Legal Disclaimer</h3>
+            <p><strong>General Corporate Presentation:</strong> All textual assets, industrial categories, and trade sectors described on tenders-global.com are provided exclusively for general reference and transparency.</p>
+            <p><strong>No Public Certification Disclosures:</strong> Tenders Global fulfills all international qualification, safety standards, and logistical compliance conditions. For strategic and operational confidentiality, regulatory safety certificates, country-specific manufacturing licenses, and product dossiers are verified exclusively inside bilateral physical tender contracts with official stakeholders rather than published on this general web node.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <span onclick="openModal('privacyModal')">Privacy & Cookie Policy</span> | 
+            <span onclick="openModal('legalModal')">Legal Disclaimer</span>
+        </div>
+        <p>&copy; 2026 Tenders Global. All rights reserved. | Secured International Procurement</p>
+    </footer>
+
+    <script>
+        function showCookiePanel() {
+            document.getElementById('cookieOverlay').style.display = 'flex';
+        }
+
+        function closeCookiePanel() {
+            document.getElementById('cookieOverlay').style.display = 'none';
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
