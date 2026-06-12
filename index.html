@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenders Global | International Medical & Pharmaceutical Trade</title>
+    <title>Global Tenders | International Medical & Pharmaceutical Trade</title>
     <style>
         /* Kurumsal Stil Ayarları */
         * {
@@ -37,40 +37,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 10px 20px; /* Logo boyutu için padding hafifçe daraltıldı */
         }
 
-        /* Yeni Kurumsal Logo Düzeni */
+        /* Güncellenmiş Kurumsal Logo Düzeni */
         .logo-wrapper {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 2px 5px rgba(2, 132, 199, 0.3);
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0f172a;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text span {
-            color: #0284c7;
+        .logo-img {
+            height: 45px; /* Üst menü için ideal yükseklik */
+            width: auto;
+            object-fit: contain;
         }
 
         nav a {
@@ -96,24 +76,19 @@
 
         /* Ana Sayfadaki Büyük Logo Alanı */
         .hero-logo-space {
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             display: flex;
             justify-content: center;
         }
 
-        .hero-badge {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid #38bdf8;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 45px;
-            color: #38bdf8;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            backdrop-filter: blur(5px);
+        .hero-logo-img {
+            max-width: 450px; /* Büyük logo alanı için genişlik sınırı */
+            width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255, 0.95); /* Logonun koyu arka planda net görünmesi için beyaz zemin */
+            padding: 20px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .hero h1 {
@@ -133,3 +108,30 @@
             color: #cbd5e1;
             font-weight: 400;
         }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="image_87f3fa.png" alt="Global Tenders Danışmanlık" class="logo-img">
+            </a>
+            <nav>
+                <a href="#about">Kurumsal</a>
+                <a href="#services">Hizmetlerimiz</a>
+                <a href="#contact">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-logo-space">
+            <img src="image_87f3fa.png" alt="Global Tenders Danışmanlık" class="hero-logo-img">
+        </div>
+        <h1>Uluslararası Sağlık ve Medikal İhalelerde Güvenilir Çözüm Ortağınız</h1>
+        <p>Global Tenders Danışmanlık ile dünya çapındaki medikal ve farmasötik ticaret fırsatlarına zahmetsizce ulaşın, işinizi küresele taşıyın.</p>
+    </section>
+
+</body>
+</html>
